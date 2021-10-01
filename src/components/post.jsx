@@ -5,7 +5,7 @@ class Post extends Component {
   render() {
     const { title, body } = this.props.post;
     return (
-      <li className="post__bbbbox">
+      <li className="post__box">
         <p className="post__title">{title}</p>
         <p className="post__body">{body.slice(0, 120)}...</p>
       </li>
