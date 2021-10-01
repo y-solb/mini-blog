@@ -8,7 +8,6 @@ class Posts extends Component {
   getPosts = async () => {
     const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
     this.setState({ posts: data });
-    console.log(this.state.posts);
   };
 
   componentDidMount() {

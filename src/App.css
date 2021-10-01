@@ -11,6 +11,12 @@ ul {
   padding: 0;
 }
 
+a {
+  display: contents;
+  text-decoration: none;
+  color: inherit;
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -49,4 +55,20 @@ ul {
   font-size: 18px;
   font-weight: 500;
   color: #868e96;
+}
+
+/* detail*/
+.detail {
+  width: 60%;
+  margin: 80px 0;
+}
+
+.detail__title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.detail__body {
+  margin-top: 60px;
+  font-size: 20px;
 }
