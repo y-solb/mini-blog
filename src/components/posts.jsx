@@ -3,11 +3,14 @@ import axios from 'axios';
 import Post from './post';
 
 class Posts extends Component {
-  state = { posts: [] };
+  state = {
+    isLoading: true,
+    posts: [],
+  };
 
   getPosts = async () => {
     const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    this.setState({ posts: data });
+    this.setState({ posts: data, isLoading: false });
   };
 
   componentDidMount() {
@@ -15,13 +18,23 @@ class Posts extends Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const { isLoading, posts } = this.state;
     return (
-      <ul className="posts">
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </ul>
+      <>
+        {isLoading ? (
+          <div class="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        ) : (
+          <ul className="posts">
+            {posts.map((post) => (
+              <Post key={post.id} post={post} />
+            ))}
+          </ul>
+        )}
+      </>
     );
   }
 }
