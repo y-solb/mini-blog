@@ -4,11 +4,11 @@ import '../app.css';
 
 class Post extends Component {
   render() {
-    const { title, body } = this.props.post;
+    const { title, body, id } = this.props.post;
     return (
       <Link
         to={{
-          pathname: '/post-detail',
+          pathname: `/post-detail/${id}`,
           state: this.props.post,
         }}
       >

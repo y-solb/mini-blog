@@ -11,7 +11,7 @@ function App() {
       <div className="app">
         <Navbar />
         <Route exact path="/" component={Posts} />
-        <Route path="/post-detail" component={PostDetail} />
+        <Route path="/post-detail/:id" component={PostDetail} />
       </div>
     </HashRouter>
   );
