@@ -23,7 +23,7 @@ class Posts extends Component {
       <section className="container">
         {isLoading ? (
           <div className="loading__box">
-            <div class="lds-facebook">
+            <div className="lds-facebook">
               <div></div>
               <div></div>
               <div></div>
