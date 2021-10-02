@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class PostDetail extends Component {
   componentDidMount() {
     const { history, location } = this.props;
-    if (location.state == undefined) {
+    if (location.state === undefined) {
       history.push('/');
     }
   }
