@@ -9,18 +9,18 @@ class PostDetail extends Component {
   }
   render() {
     const { location } = this.props;
-    if (location.state) {
-      return (
-        <section className="detail">
-          <div className="detail__box">
-            <p className="detail__title">{location.state.title}</p>
-            <p className="detail__body">{location.state.body}</p>
-          </div>
-        </section>
-      );
-    } else {
-      return null;
-    }
+    return (
+      <>
+        {location.state ? (
+          <section className="detail">
+            <div className="detail__box">
+              <p className="detail__title">{location.state.title}</p>
+              <p className="detail__body">{location.state.body}</p>
+            </div>
+          </section>
+        ) : null}
+      </>
+    );
   }
 }
 
