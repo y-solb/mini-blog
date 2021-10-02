@@ -12,7 +12,7 @@ class Post extends Component {
           state: this.props.post,
         }}
       >
-        <li className="post__box">
+        <li className="post">
           <p className="post__title">{title}</p>
           <p className="post__body">{body.slice(0, 120)}...</p>
         </li>

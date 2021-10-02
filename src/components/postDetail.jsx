@@ -5,10 +5,12 @@ class PostDetail extends Component {
     console.log(this.props.location.state);
     const { title, body } = this.props.location.state;
     return (
-      <div className="detail">
-        <p className="detail__title">{title}</p>
-        <p className="detail__body">{body}</p>
-      </div>
+      <section className="detail">
+        <div className="detail__box">
+          <p className="detail__title">{title}</p>
+          <p className="detail__body">{body}</p>
+        </div>
+      </section>
     );
   }
 }

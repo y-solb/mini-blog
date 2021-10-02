@@ -20,12 +20,14 @@ class Posts extends Component {
   render() {
     const { isLoading, posts } = this.state;
     return (
-      <>
+      <section className="container">
         {isLoading ? (
-          <div class="lds-facebook">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div className="loading__box">
+            <div class="lds-facebook">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         ) : (
           <ul className="posts">
@@ -34,7 +36,7 @@ class Posts extends Component {
             ))}
           </ul>
         )}
-      </>
+      </section>
     );
   }
 }
