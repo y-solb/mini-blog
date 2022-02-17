@@ -1,44 +1,41 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Post from './post';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Post from "./post";
 
-class Posts extends Component {
-  state = {
-    isLoading: true,
-    posts: [],
-  };
+const Posts = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [posts, setPosts] = useState([]);
 
-  getPosts = async () => {
-    const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    this.setState({ posts: data, isLoading: false });
-  };
+  useEffect(() => {
+    const getPosts = async () => {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      setPosts(response.data);
+      setIsLoading(false);
+    };
+    getPosts();
+  }, []);
 
-  componentDidMount() {
-    this.getPosts();
-  }
-
-  render() {
-    const { isLoading, posts } = this.state;
-    return (
-      <section className="container">
-        {isLoading ? (
-          <div className="loading__box">
-            <div className="lds-facebook">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+  return (
+    <section className="container">
+      {isLoading ? (
+        <div className="loading__box">
+          <div className="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
-        ) : (
-          <ul className="posts">
-            {posts.map((post) => (
-              <Post key={post.id} post={post} />
-            ))}
-          </ul>
-        )}
-      </section>
-    );
-  }
-}
+        </div>
+      ) : (
+        <ul className="posts">
+          {posts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+};
 
 export default Posts;
