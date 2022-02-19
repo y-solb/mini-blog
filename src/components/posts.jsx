@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Post from "./post";
+import Loading from "./loading";
 
 const Posts = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,13 +21,7 @@ const Posts = () => {
   return (
     <section className="container">
       {isLoading ? (
-        <div className="loading__box">
-          <div className="lds-facebook">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
+        <Loading />
       ) : (
         <ul className="posts">
           {posts.map((post) => (
