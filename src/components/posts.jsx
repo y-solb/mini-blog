@@ -17,7 +17,7 @@ const Posts = () => {
     setIsLoading(false);
   }, []);
 
-  const handleIntersect = useCallback(async (entries) => {
+  const handleIntersect = useCallback((entries) => {
     const target = entries[0];
     if (target.isIntersecting) {
       setPage((prev) => prev + 1);
