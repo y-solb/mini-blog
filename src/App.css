@@ -46,9 +46,11 @@ a {
 
 /* Posts */
 .container {
-  height: 100%;
+  max-width: 1200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 
 .loading__box {
@@ -131,7 +133,7 @@ a {
 }
 
 .detail__box {
-  width: 1200px;
+  max-width: 1200px;
   padding: 70px 60px 0 60px;
   margin: auto;
 }
@@ -144,4 +146,9 @@ a {
 .detail__body {
   margin-top: 60px;
   font-size: 20px;
+}
+
+.target {
+  width: 100%;
+  height: 100px;
 }
